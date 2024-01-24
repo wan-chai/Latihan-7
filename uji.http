@@ -1,0 +1,80 @@
+GET http://localhost:8080
+
+
+// READ API - dapatkan semua data
+###
+GET http://localhost:8080/pengguna
+
+
+// CREATE API - tambah satu data
+###
+POST http://localhost:8080/pengguna
+content-type: application/json
+
+{
+    "nama": "hanafiahhassan",
+    "email": "user@cloud-connect.asia",
+    "alamat": "Kg Melayu Kangkar Pulai",
+    "daerah": "Johor Bahru",
+    "negeri": "Johor"
+}
+
+// READ API - dapatkan data mengikut field nama
+###
+GET http://localhost:8080/pengguna/hanafiah
+
+
+// READ API - dapatkan data melalui search
+###
+GET http://localhost:8080/searchpengguna/han
+
+
+// READ API - dapatkan data mengikut field daerah
+###
+GET http://localhost:8080/penggunadaerah/johor%20bahru
+
+
+// CREATE API - tambah banyak data
+###
+POST http://localhost:8080/penggunaramai
+content-type: application/json
+
+[
+    {
+        "nama": "hanafiah",
+        "email": "user@cloud-connect.asia",
+        "alamat": "Taman Guru",
+        "daerah": "Kota Tinggi",
+        "negeri": "Johor"
+    },
+    {
+        "nama": "hassan",
+        "email": "user@cloud-connect.asia",
+        "alamat": "Kg Melayu Kangkar Pulai",
+        "daerah": "Johor Bahru",
+        "negeri": "Johor"
+    }
+]
+
+
+###
+PUT http://localhost:8080/pengguna/19
+content-type: application/json
+
+{
+    "alamat": "Kg Kelantan"
+}
+
+
+###
+DELETE http://localhost:8080/pengguna/1
+
+
+###
+PUT http://localhost:8080/updatepengguna/hassan
+content-type: application/json
+
+{
+    "alamat": "Kota Kecil",
+    "daerah": "Kota Tinggi"
+}

@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model pengguna {
+  id      Int     @id @default(autoincrement()) @db.UnsignedInt
+  nama    String  @unique @db.VarChar(255)
+  email   String  @db.VarChar(255)
+  alamat  String  @db.VarChar(255)
+  daerah  String  @db.VarChar(255)
+  negeri  String  @db.VarChar(255)
+  kampung String? @db.VarChar(255)
+}
